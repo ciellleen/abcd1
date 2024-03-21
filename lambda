@@ -1,0 +1,91 @@
+파이썬 람다
+
+람다 함수는 작고 익명의 함수입니다.
+
+람다 함수는 여러 개의 인수를 취할 수 있지만 오직 하나의 표현식만을 가질 수 있습니다.
+
+구문
+
+```python
+lambda 인수 : 표현식
+```
+
+표현식이 실행되고 결과가 반환됩니다.
+
+예:
+
+```python
+# 인수 a에 10을 더하고 결과를 반환합니다.
+x = lambda a : a + 10
+print(x(5))
+```
+
+람다 함수는 여러 개의 인수를 취할 수 있습니다.
+
+예:
+
+```python
+# 인수 a와 b를 곱하고 결과를 반환합니다.
+x = lambda a, b : a * b
+print(x(5, 6))
+```
+
+```python
+# 인수 a, b, c를 합산하고 결과를 반환합니다.
+x = lambda a, b, c : a + b + c
+print(x(5, 6, 2))
+```
+
+람다 함수 사용 이유
+
+람다의 힘은 다른 함수 내부에서 익명 함수로 사용할 때 더 잘 드러납니다.
+
+예를 들어, 하나의 인수를 취하는 함수 정의가 있고 해당 인수가 알 수 없는 숫자와 곱해져야 하는 경우를 생각해보세요.
+
+```python
+def myfunc(n):
+  return lambda a : a * n
+```
+
+이 함수 정의를 사용하여 항상 보낸 숫자를 두 배로 만드는 함수를 만듭니다.
+
+예:
+
+```python
+def myfunc(n):
+  return lambda a : a * n
+
+mydoubler = myfunc(2)
+
+print(mydoubler(11))  # 결과: 22
+```
+
+또는, 동일한 함수 정의를 사용하여 항상 보낸 숫자를 세 배로 만드는 함수를 만들 수 있습니다.
+
+예:
+
+```python
+def myfunc(n):
+  return lambda a : a * n
+
+mytripler = myfunc(3)
+
+print(mytripler(11))  # 결과: 33
+```
+
+또는, 동일한 함수 정의를 사용하여 동일한 프로그램 내에서 두 함수를 모두 만들 수 있습니다.
+
+예:
+
+```python
+def myfunc(n):
+  return lambda a : a * n
+
+mydoubler = myfunc(2)
+mytripler = myfunc(3)
+
+print(mydoubler(11))  # 결과: 22
+print(mytripler(11))  # 결과: 33
+```
+
+람다 함수는 익명 함수가 잠시 필요할 때 사용합니다.
