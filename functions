@@ -1,0 +1,188 @@
+파이썬 함수
+
+함수는 호출될 때만 실행되는 코드 블록입니다. 
+
+매개변수, 즉 데이터를 함수에 전달할 수 있습니다. 
+
+함수는 결과로 데이터를 반환할 수 있습니다.
+
+**함수 생성**
+
+파이썬에서는 `def` 키워드를 사용하여 함수를 정의합니다.
+
+예를 들면:
+
+```python
+def my_function():
+    print("함수에서 안녕하세요")
+```
+
+**함수 호출**
+
+함수를 호출하려면 함수 이름 뒤에 괄호를 사용합니다.
+
+예를 들면:
+
+```python
+def my_function():
+    print("함수에서 안녕하세요")
+
+my_function()
+```
+
+**인수**
+
+함수에 정보를 전달할 수 있습니다. 이를 인수라고 합니다.
+
+인수는 함수 이름 뒤의 괄호 안에 지정됩니다. 원하는 만큼의 인수를 추가할 수 있고, 쉼표로 구분합니다.
+
+다음 예제는 하나의 인수(`fname`)를 가진 함수를 보여줍니다. 함수가 호출될 때, 전달된 이름을 사용하여 전체 이름을 출력합니다.
+
+예를 들면:
+
+```python
+def my_function(fname):
+    print(fname + " Refsnes")
+
+my_function("Emil")
+my_function("Tobias")
+my_function("Linus")
+```
+
+**매개변수 또는 인수?**
+
+매개변수와 인수는 동일한 것을 가리키는 용어입니다: 함수에 전달되는 정보입니다.
+
+함수의 관점에서:
+
+- 매개변수는 함수 정의 내의 괄호 안에 나열된 변수입니다.
+- 인수는 함수가 호출될 때 함수로 보내지는 값입니다.
+
+**인수의 수**
+
+기본적으로 함수는 올바른 수의 인수로 호출되어야 합니다. 예를 들어, 함수가 2개의 인수를 기대하는 경우 2개의 인수로 함수를 호출해야 합니다. 더 많이 전달하거나 더 적게 전달해서는 안 됩니다.
+
+예를 들어:
+
+```python
+이 함수는 2개의 인수를 기대하며, 2개의 인수를 받습니다:
+
+def my_function(fname, lname):
+    print(fname + " " + lname)
+
+my_function("Emil", "Refsnes")
+```
+
+인수를 1개 또는 3개로 호출하면 오류가 발생합니다.
+
+예를 들어:
+
+```python
+이 함수는 2개의 인수를 기대하지만 1개만 받습니다:
+
+def my_function(fname, lname):
+    print(fname + " " + lname)
+
+my_function("Emil")
+```
+
+**임의의 인수, `*args`**
+
+함수로 전달되는 인수의 개수를 모를 경우, 매개변수 이름 앞에 `*`를 추가합니다.
+
+이렇게 하면 함수가 인수의 튜플을 받아들이고 항목에 접근할 수 있습니다.
+
+예를 들면:
+
+```python
+인수의 개수가 알려지지 않은 경우, 매개변수 이름 앞에 `*`를 추가합니다:
+
+def my_function(*kids):
+    print("제일 어린 아이는 " + kids[2] + "입니다.")
+
+my_function("Emil", "Tobias", "Linus")
+```
+
+**임의의 인수**는 자주 `*args`로 축약됩니다.
+
+**키워드 인수**
+
+키 = 값 구문을 사용하여 인수를 전달할 수도 있습니다.
+
+이렇게 하면 인수의 순서가 중요하지 않습니다.
+
+예를 들어:
+
+```python
+def my_function(child3, child2, child1):
+    print("제일 어린 아이는 " + child3 + "입니다.")
+
+my_function(child1 = "Emil", child2 = "Tobias", child3 = "Linus")
+```
+
+**키워드 인수**는 Python 문서에서 `kwargs`로 자주 축약됩니다.
+
+**임의의 키워드 인수, `**kwargs`**
+
+함수로 전달되는 키워드 인수의 개수를 모를 경우, 매개변수 이름 앞에 두 개의 별표 `**`를 추가합니다.
+
+이렇게 하면 함수가 인수의 사전을 받아들이고 항목에 접근할 수 있습니다.
+
+예를 들면:
+
+```python
+키워드 인수의 개수를 모르는 경우, 매개변수 이름 앞에 이중 별표 `**`를 추가합니다:
+
+def my_function(**kid):
+    print("그의 성은 " + kid["lname"] + "입니다.")
+
+my_function(fname = "Tobias", lname = "Refsnes")
+```
+
+**임의의 키워드 인수**는 Python 문서에서 `**kwargs`로 자주 축약됩니다.
+
+**기본 매개변수 값**
+
+다음 예제는 기본 매개변수 값을 사용하는 방법을 보여줍니다.
+
+인수 없이 함수를 호출하면 기본값을 사용합니다.
+
+예를 들면:
+
+```python
+def my_function(country = "Norway"):
+    print("나는 " + country + "에서 왔습니다.")
+
+my_function("Sweden")
+my_function("India")
+my_function()
+my_function("Brazil")
+```
+
+**리스트를 인수로 전달**
+
+함수에 문자열, 숫자, 리스트, 사전 등과 같은 모든 데이터 유형의 인수를 전달할 수 있으며, 함수 내에서는 동일한 데이터 유형으로 처리됩니다.
+
+예를 들어, 리스트를 인수로 전달하면 함수 내에서 여전히 리스트로 유지됩니다.
+
+예를 들면:
+
+```python
+def my_function(food):
+    for x in food:
+        print(x)
+
+fruits = ["apple", "banana", "cherry"]
+
+my_function(fruits)
+```
+
+**반환 값**
+
+함수가 값을 반환하도록 하려면 `return` 문을 사용합니다.
+
+예를 들면:
+
+```python
+def my_function(x):
+    return 5 *
