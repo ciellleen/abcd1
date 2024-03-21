@@ -1,0 +1,108 @@
+모듈(Module)이란 무엇인가요?
+모듈은 코드 라이브러리와 같은 것으로 간주됩니다. 응용 프로그램에 포함하려는 함수 집합을 포함하는 파일입니다.
+
+모듈 생성하기
+모듈을 생성하려면 코드를 .py 확장자를 가진 파일에 저장하면 됩니다.
+
+```python
+# mymodule.py 파일에 다음 코드를 저장하세요.
+def greeting(name):
+  print("Hello, " + name)
+```
+
+모듈 사용하기
+이제 import 문을 사용하여 방금 생성한 모듈을 사용할 수 있습니다.
+
+```python
+# mymodule 모듈을 가져와서 greeting 함수를 호출합니다.
+import mymodule
+
+mymodule.greeting("Jonathan")
+```
+
+주의: 모듈에서 함수를 사용할 때는 모듈 이름을 사용합니다. 예: module_name.function_name.
+
+모듈 내 변수
+모듈에는 이미 설명된 함수뿐만 아니라 모든 유형의 변수(배열, 사전, 객체 등)도 포함될 수 있습니다.
+
+```python
+# mymodule.py 파일에 다음 코드를 저장하세요.
+person1 = {
+  "name": "John",
+  "age": 36,
+  "country": "Norway"
+}
+```
+
+모듈을 가져와서 person1 사전에 액세스할 수 있습니다.
+
+```python
+# mymodule 모듈을 가져와서 person1 사전에 액세스합니다.
+import mymodule
+
+a = mymodule.person1["age"]
+print(a)
+```
+
+모듈 이름 지정하기
+모듈 파일의 이름을 원하는 대로 지정할 수 있지만 파일 확장자 .py를 가져야 합니다.
+
+모듈 이름 바꾸기
+모듈을 가져올 때 as 키워드를 사용하여 별칭을 만들 수 있습니다.
+
+```python
+# mx로 mymodule에 별칭 만들기
+import mymodule as mx
+
+a = mx.person1["age"]
+print(a)
+```
+
+내장 모듈
+파이썬에는 필요할 때마다 가져올 수 있는 여러 내장 모듈이 있습니다.
+
+```python
+# platform 모듈을 가져와서 사용합니다.
+import platform
+
+x = platform.system()
+print(x)
+```
+
+dir() 함수 사용하기
+모듈에 정의된 모든 함수 이름(또는 변수 이름)을 나열하는 내장 함수인 dir() 함수가 있습니다.
+
+```python
+# platform 모듈에 속한 모든 정의된 이름을 나열합니다.
+import platform
+
+x = dir(platform)
+print(x)
+```
+
+참고: dir() 함수는 직접 만든 모듈 뿐만 아니라 모든 모듈에 사용할 수 있습니다.
+
+모듈에서 가져오기
+from 키워드를 사용하여 모듈에서 일부만 가져올 수 있습니다.
+
+```python
+# mymodule 모듈에는 하나의 함수와 하나의 사전이 있습니다.
+def greeting(name):
+  print("Hello, " + name)
+
+person1 = {
+  "name": "John",
+  "age": 36,
+  "country": "Norway"
+}
+```
+
+모듈에서 person1 사전만 가져옵니다.
+
+```python
+from mymodule import person1
+
+print(person1["age"])
+```
+
+주의: from 키워드를 사용하여 가져올 때 모듈 이름은 사용하지 않습니다. 예: person1["age"], mymodule.person1["age"]가 아닙니다.
