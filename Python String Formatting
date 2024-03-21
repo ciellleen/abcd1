@@ -1,0 +1,85 @@
+문자열 포맷팅
+
+format() 메서드를 사용하여 문자열을 예상대로 표시할 수 있도록 할 수 있습니다.
+
+**String format()**
+
+format() 메서드를 사용하면 문자열의 선택된 부분을 형식화할 수 있습니다.
+
+가끔은 제어할 수 없는 텍스트 부분이 있을 수 있습니다. 예를 들어 데이터베이스에서 가져오거나 사용자 입력일 수도 있습니다.
+
+이러한 값을 제어하려면 텍스트에 중괄호({})를 추가하고 값을 format() 메서드로 실행합니다.
+
+**예시**
+
+원하는 위치에 가격을 표시할 자리표시자를 추가합니다:
+
+```python
+price = 49
+txt = "가격은 {} 달러입니다."
+print(txt.format(price))
+```
+
+값을 어떻게 변환할지 지정하기 위해 중괄호 내부에 매개변수를 추가할 수 있습니다.
+
+**예시**
+
+가격을 소수점 둘째 자리까지 표시하도록 형식화합니다:
+
+```python
+txt = "가격은 {:.2f} 달러입니다."
+```
+
+더 많은 값을 사용하려면 format() 메서드에 더 많은 값을 추가합니다.
+
+**예시**
+
+```python
+print(txt.format(price, itemno, count))
+```
+
+더 많은 자리표시자를 추가합니다.
+
+```python
+quantity = 3
+itemno = 567
+price = 49
+myorder = "제가 {}개의 {} 상품을 {:.2f} 달러에 구매하고 싶습니다."
+print(myorder.format(quantity, itemno, price))
+```
+
+**인덱스 번호**
+
+값이 올바른 자리표시자에 배치되도록 인덱스 번호(중괄호 내부의 번호 {0})를 사용할 수 있습니다.
+
+**예시**
+
+```python
+quantity = 3
+itemno = 567
+price = 49
+myorder = "{0}개의 {1} 상품을 {2:.2f} 달러에 구매하고 싶습니다."
+print(myorder.format(quantity, itemno, price))
+```
+
+동일한 값을 여러 번 참조하려면 인덱스 번호를 사용합니다.
+
+**예시**
+
+```python
+age = 36
+name = "John"
+txt = "{1}의 이름은 {1}입니다. {1}은 {0}살입니다."
+print(txt.format(age, name))
+```
+
+**이름 지정 인덱스**
+
+중괄호 내부에 이름을 입력하여 이름 지정 인덱스를 사용할 수도 있습니다. 그러나 매개변수 값을 전달할 때 이름을 사용해야 합니다.
+
+**예시**
+
+```python
+myorder = "저는 {carname}을 소유하고 있습니다. 이것은 {model}입니다."
+print(myorder.format(carname = "Ford", model = "Mustang"))
+```
