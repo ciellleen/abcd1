@@ -1,0 +1,25 @@
+사용자 입력
+
+Python은 사용자 입력을 허용합니다.
+
+이는 우리가 사용자로부터 입력을 요청할 수 있다는 것을 의미합니다.
+
+Python 3.6에서는 input() 메서드를 사용합니다.
+
+Python 2.7에서는 raw_input() 메서드를 사용합니다.
+
+다음 예제는 사용자명을 요청하고, 사용자명을 입력하면 화면에 출력합니다:
+
+Python 3.6:
+```python
+username = input("사용자명을 입력하세요:")
+print("사용자명은: " + username)
+```
+
+Python 2.7:
+```python
+username = raw_input("사용자명을 입력하세요:")
+print("사용자명은: " + username)
+```
+
+Python은 input() 함수에 도달하면 실행을 중단하고, 사용자가 입력을 제공한 후에 계속합니다.
