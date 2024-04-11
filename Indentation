@@ -1,0 +1,9 @@
+- 파이썬에서 들여쓰기는 코드 블록을 구분하는 데 사용됨.
+- 예시:
+    
+    ```python
+    pythonCopy code
+    if 5 > 2:
+        print("Five is greater than two!")
+    
+    ```
